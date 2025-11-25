@@ -1,29 +1,169 @@
 // productos
 const productosArray = [
-  { id: "zapatilla-1", titulo: "Zapatilla 01", imagen: "img/producto-1.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "zapatilla-2", titulo: "Zapatilla 02", imagen: "img/producto-2.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "zapatilla-3", titulo: "Zapatilla 03", imagen: "img/producto-3.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "zapatilla-4", titulo: "Zapatilla 04", imagen: "img/producto-4.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "zapatilla-5", titulo: "Zapatilla 05", imagen: "img/producto-5.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "zapatilla-6", titulo: "Zapatilla 06", imagen: "img/producto-6.jpg", categoria: { nombre: "Zapatillas", id: "zapatillas" }, precio: 1000 },
-  { id: "remera-1", titulo: "Remera 01", imagen: "img/remeras/remera-1.jpg", categoria: { nombre: "Remeras", id: "remeras" }, precio: 1000 },
-  { id: "remera-2", titulo: "Remera 02", imagen: "img/remeras/remera-2.jpg", categoria: { nombre: "Remeras", id: "remeras" }, precio: 1000 },
-  { id: "remera-3", titulo: "Remera 03", imagen: "img/remeras/remera-3.jpg", categoria: { nombre: "Remeras", id: "remeras" }, precio: 1000 },
-  { id: "pantalon-1", titulo: "Pantalón 01", imagen: "img/pantalones/pantalon-1.jpg", categoria: { nombre: "Pantalones", id: "pantalones" }, precio: 1000 },
-  { id: "pantalon-2", titulo: "Pantalón 02", imagen: "img/pantalones/pantalon-2.jpg", categoria: { nombre: "Pantalones", id: "pantalones" }, precio: 1000 },
-  { id: "pantalon-3", titulo: "Pantalón 03", imagen: "img/pantalones/pantalon-3.jpg", categoria: { nombre: "Pantalones", id: "pantalones" }, precio: 1000 },
-  { id: "gorra-1", titulo: "Gorra 01", imagen: "img/gorras/gorra-1.jpg", categoria: { nombre: "Gorras", id: "gorras" }, precio: 1000 },
-  { id: "gorra-2", titulo: "Gorra 02", imagen: "img/gorras/gorra-2.jpg", categoria: { nombre: "Gorras", id: "gorras" }, precio: 1000 },
-  { id: "gorra-3", titulo: "Gorra 03", imagen: "img/gorras/gorra-3.jpg", categoria: { nombre: "Gorras", id: "gorras" }, precio: 1000 }
+  { 
+    id: "zapatilla-1", 
+    titulo: "Zapatilla 01", 
+    imagen: "img/producto-1.jpg", 
+    categoria: 
+    { 
+        nombre: "Zapatillas", 
+        id: "zapatillas" 
+    }, 
+    precio: 1000 },
+  
+  { 
+    id: "zapatilla-2", 
+    titulo: "Zapatilla 02", 
+    imagen: "img/producto-2.jpg", 
+    categoria: 
+    { 
+        nombre: "Zapatillas", 
+        id: "zapatillas" 
+    }, 
+        precio: 1000 },
+  { 
+    id: "zapatilla-3", 
+    titulo: "Zapatilla 03", 
+    imagen: "img/producto-3.jpg", 
+    categoria: 
+    { 
+        nombre: "Zapatillas", 
+        id: "zapatillas" 
+    }, 
+    precio: 1000 },
+  { 
+    id: "zapatilla-4", 
+    titulo: "Zapatilla 04", 
+    imagen: "img/producto-4.jpg", 
+    categoria: 
+     { 
+        nombre: "Zapatillas", 
+        id: "zapatillas" 
+    },
+         precio: 1000 },
+  { 
+    id: "zapatilla-5", 
+    titulo: "Zapatilla 05", 
+    imagen: "img/producto-5.jpg", 
+    categoria: 
+    { 
+        nombre: "Zapatillas", 
+        id: "zapatillas"
+     }, 
+        precio: 1000 },
+  { 
+    id: "zapatilla-6", 
+    titulo: "Zapatilla 06", 
+    imagen: "img/producto-6.jpg", 
+    categoria: 
+    { 
+        nombre: "Zapatillas", 
+        id: "zapatillas" 
+    }, 
+    precio: 1000 },
+  { 
+    id: "remera-1", 
+    titulo: "Remera 01", 
+    imagen: "img/remeras/remera-1.jpg", 
+    categoria: 
+    { 
+        nombre: "Remeras", 
+        id: "remeras" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "remera-2", 
+    titulo: "Remera 02", 
+    imagen: "img/remeras/remera-2.jpg", 
+    categoria: 
+    { nombre: "Remeras", id: "remeras" }, precio: 1000 },
+  { 
+    id: "remera-3", 
+    titulo: "Remera 03", 
+    imagen: "img/remeras/remera-3.jpg", 
+    categoria: 
+    { 
+        nombre: "Remeras", 
+        id: "remeras" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "pantalon-1", 
+    titulo: "Pantalón 01", 
+    imagen: "img/pantalones/pantalon-1.jpg", 
+    categoria: 
+    { 
+        nombre: "Pantalones", 
+        id: "pantalones" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "pantalon-2", 
+    titulo: "Pantalón 02", 
+    imagen: "img/pantalones/pantalon-2.jpg", 
+    categoria: 
+    { 
+        nombre: "Pantalones", 
+        id: "pantalones" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "pantalon-3", 
+    titulo: "Pantalón 03", 
+    imagen: "img/pantalones/pantalon-3.jpg", 
+    categoria: 
+    { 
+        nombre: "Pantalones", 
+        id: "pantalones" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "gorra-1", 
+    titulo: "Gorra 01", 
+    imagen: "img/gorras/gorra-1.jpg", 
+    categoria: 
+    {
+         nombre: "Gorras", 
+        id: "gorras" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "gorra-2", 
+    titulo: "Gorra 02", 
+    imagen: "img/gorras/gorra-2.jpg", 
+    categoria: 
+    { 
+        nombre: "Gorras", 
+        id: "gorras" 
+
+    }, 
+    precio: 1000 },
+  { 
+    id: "gorra-3", 
+    titulo: "Gorra 03", 
+    imagen: "img/gorras/gorra-3.jpg", 
+    categoria: 
+    { 
+        nombre: "Gorras", 
+        id: "gorras" 
+
+    }, 
+    precio: 1000 }
 ];
 
-// nodos del DOM
+
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-productos");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 const numeroCarrito = document.querySelector("#numero-carrito");
 
-// carrito localStorage seguro
+
 let productosEnCarrito = [];
 try {
     productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
@@ -31,13 +171,13 @@ try {
     productosEnCarrito = [];
 }
 
-// mostrar número carrito
+
 function actualizarNumeroCarrito() {
     let total = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numeroCarrito.innerText = total;
 }
 
-// cargar productos en el DOM
+
 function cargarProductos(productos) {
     contenedorProductos.innerHTML = "";
     productos.forEach(producto => {
@@ -55,7 +195,7 @@ function cargarProductos(productos) {
     });
 }
 
-// agregar producto al carrito
+
 function agregarAlCarrito(id) {
     const productoAgregado = productosArray.find(p => p.id === id);
     if (!productoAgregado) return;
@@ -64,22 +204,22 @@ function agregarAlCarrito(id) {
         const index = productosEnCarrito.findIndex(p => p.id === id);
         productosEnCarrito[index].cantidad++;
     } else {
-        productosEnCarrito.push({ ...productoAgregado, cantidad: 1 }); // copia simple
+        productosEnCarrito.push({ ...productoAgregado, cantidad: 1 }); 
     }
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     actualizarNumeroCarrito();
-    alert("Producto agregado!"); // simple feedback
+    alert("Producto agregado!"); 
 }
 
-// delegación de eventos para botones de agregar
+
 contenedorProductos.addEventListener("click", (e) => {
     if (e.target.classList.contains("boton-agregar-carrito")) {
         agregarAlCarrito(e.target.id);
     }
 });
 
-// filtrar productos por categoría
+
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
         botonesCategorias.forEach(b => b.classList.remove("active"));
@@ -97,6 +237,6 @@ botonesCategorias.forEach(boton => {
     });
 });
 
-// inicio
+
 cargarProductos(productosArray);
 actualizarNumeroCarrito();

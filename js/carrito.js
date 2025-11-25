@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // cargar carrito desde localStorage
+  
     let productosEnCarrito = [];
     try {
         productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         productosEnCarrito = [];
     }
 
-    // nodos del DOM
+   
     const contenedorVacio = document.querySelector("#carrito-vacio");
     const contenedorProductos = document.querySelector("#carrito-productos");
     const contenedorAcciones = document.querySelector("#carrito-acciones");
@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonComprar = document.querySelector(".acciones-comprar-carrito");
     const totalDom = document.querySelector("#total");
 
-    // función simple para arreglar rutas de imagen
+    
     function rutaImagenCarrito(archivo) {
         if (!archivo) return "";
         if (archivo.startsWith("../") || archivo.startsWith("/")) return archivo;
-        return "../" + archivo; // porque estamos en pages/carrito.html
+        return "../" + archivo; 
     }
 
     // cargar productos en carrito
@@ -46,16 +46,27 @@ document.addEventListener("DOMContentLoaded", function () {
             div.classList.add("carrito-producto");
             div.innerHTML = `
                 <img class="carrito-producto-imagen" src="${rutaImagenCarrito(producto.imagen)}" alt="${producto.titulo}">
-                <div class="carrito-producto-titulo"><small>Título</small><h3>${producto.titulo}</h3></div>
-                <div class="carrito-producto-cantidad"><small>Cantidad</small><p>${producto.cantidad}</p></div>
-                <div class="carrito-producto-precio"><small>Precio</small><p>$${producto.precio}</p></div>
-                <div class="carrito-producto-subtotal"><small>Subtotal</small><p>$${producto.precio * producto.cantidad}</p></div>
+                <div class="carrito-producto-titulo">
+                  <small>Título</small>
+                  <h3>${producto.titulo}</h3></div>
+                <div class="carrito-producto-cantidad">
+                  <small>Cantidad</small>
+                  <p>${producto.cantidad}</p>
+                </div>
+                <div class="carrito-producto-precio">
+                  <small>Precio</small>
+                  <p>$${producto.precio}</p>
+                </div>
+                <div class="carrito-producto-subtotal">
+                  <small>Subtotal</small>
+                  <p>$${producto.precio * producto.cantidad}</p>
+                </div>
                 <button class="carrito-producto-eliminar" id="${producto.id}">Eliminar</button>
             `;
             contenedorProductos.append(div);
         });
 
-        // listeners para eliminar productos
+       
         const botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
         botonesEliminar.forEach(boton => {
             boton.addEventListener("click", (e) => {
@@ -70,18 +81,18 @@ document.addEventListener("DOMContentLoaded", function () {
         actualizarTotal();
     }
 
-    // vaciar carrito
+  
     function vaciarCarrito() {
         if (confirm("¿Seguro que querés vaciar el carrito?")) {
             productosEnCarrito = [];
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
             cargarCarrito();
-            // cursor manito cuando se vacía
+            alert("Carrito vaciado!");
             if (botonVaciar) botonVaciar.style.cursor = "pointer";
         }
     }
 
-    // comprar carrito
+    
     function comprarCarrito() {
         productosEnCarrito = [];
         localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
@@ -92,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         totalDom.innerText = "$00.00";
     }
 
-    // calcular total
+   
     function actualizarTotal() {
         const total = productosEnCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
         totalDom.innerText = `$${total}`;
@@ -102,6 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (botonVaciar) botonVaciar.addEventListener("click", vaciarCarrito);
     if (botonComprar) botonComprar.addEventListener("click", comprarCarrito);
 
-    // inicio
+    
     cargarCarrito();
 });
