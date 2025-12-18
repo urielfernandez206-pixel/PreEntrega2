@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return "../" + archivo; 
     }
 
-    // cargar productos en carrito
     function cargarCarrito() {
         if (productosEnCarrito.length === 0) {
             contenedorVacio.style.display = "block";
@@ -72,7 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
             boton.addEventListener("click", (e) => {
                 const id = e.currentTarget.id;
                 productosEnCarrito = productosEnCarrito.filter(p => p.id !== id);
-                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+                try {
+                    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+                } catch (error) {
+                    console.log("Error actualizando carrito");
+                }
                 cargarCarrito();
                 alert("Producto eliminado!");
             });
@@ -85,7 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function vaciarCarrito() {
         if (confirm("¿Seguro que querés vaciar el carrito?")) {
             productosEnCarrito = [];
-            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            try {
+                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            } catch (error) {
+                console.log("Error al vaciar el carrito");
+            }
             cargarCarrito();
             alert("Carrito vaciado!");
             if (botonVaciar) botonVaciar.style.cursor = "pointer";
@@ -95,7 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     function comprarCarrito() {
         productosEnCarrito = [];
-        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+        try {
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+        } catch (error) {
+            console.log("Error al finalizar la compra");
+        }
         contenedorVacio.style.display = "none";
         contenedorProductos.style.display = "none";
         contenedorAcciones.style.display = "none";

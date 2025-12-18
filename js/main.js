@@ -206,8 +206,11 @@ function agregarAlCarrito(id) {
     } else {
         productosEnCarrito.push({ ...productoAgregado, cantidad: 1 }); 
     }
-
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    try {
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    } catch (error) {
+        console.log("Error guardando en localStorage");
+    }
     actualizarNumeroCarrito();
     alert("Producto agregado!"); 
 }
