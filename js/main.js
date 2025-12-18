@@ -212,9 +212,18 @@ function agregarAlCarrito(id) {
         console.log("Error guardando en localStorage");
     }
     actualizarNumeroCarrito();
-    alert("Producto agregado!"); 
+    if (typeof Swal !== "undefined") {
+        Swal.fire({
+            title: "Agregado",
+            text: "Producto agregado al carrito",
+            icon: "success",
+            timer: 1200,
+            showConfirmButton: false
+        });
+    } else {
+        alert("Producto agregado!");
+    }
 }
-
 
 contenedorProductos.addEventListener("click", (e) => {
     if (e.target.classList.contains("boton-agregar-carrito")) {
